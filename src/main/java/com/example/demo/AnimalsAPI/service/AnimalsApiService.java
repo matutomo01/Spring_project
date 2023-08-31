@@ -16,6 +16,7 @@ public class AnimalsApiService {
 
 	public AnimalsApiService(AnimalsAPIRepository animalsAPIRepository) { 
 		this.animalsAPIRepository = animalsAPIRepository; 
+		
 	} 
 
 	public List<AnimalsAPIData> getAnimalsAPIData() throws IOException { 
@@ -26,11 +27,13 @@ public class AnimalsApiService {
 		return Arrays.asList(animalsList);
 		
 	}
+	
 
 	public List<AnimalsAPIData> getSelectedAnimalsAPIData(String animals) throws IOException {
 
 		AnimalsAPIData[] matchingAnimalsList = animalsAPIRepository.getSelectedAnimalsAPIData(animals);
 
 		return Arrays.asList(matchingAnimalsList);
+		
 	}
 }

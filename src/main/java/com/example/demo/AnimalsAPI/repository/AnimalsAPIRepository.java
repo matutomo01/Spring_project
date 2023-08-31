@@ -44,9 +44,12 @@ public class AnimalsAPIRepository {
 
 		ObjectMapper mapper = new ObjectMapper();
 
+		
 		AnimalsAPIData[] matchingAnimalsList = mapper.readValue(json, AnimalsAPIData[].class);
 
+		
 		return matchingAnimalsList;
+		
 	}
 
 }
