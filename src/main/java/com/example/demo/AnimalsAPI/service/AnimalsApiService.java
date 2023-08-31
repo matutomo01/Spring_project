@@ -15,7 +15,7 @@ public class AnimalsApiService {
 	private final AnimalsAPIRepository animalsAPIRepository; 
 
 	public AnimalsApiService(AnimalsAPIRepository animalsAPIRepository) { 
-		this.animalsAPIRepository = animalsAPIRepository; 
+		 this.animalsAPIRepository = animalsAPIRepository; 
 		
 	} 
 
