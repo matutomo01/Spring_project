@@ -10,25 +10,22 @@ import com.example.demo.AnimalsAPI.data.AnimalsAPIData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
-public class AnimalsAPIRepository { 
-	
+public class AnimalsAPIRepository {
 
 	public AnimalsAPIData[] getAnimalsAPIData() throws IOException {
 
-		
 		String url = "https://jsn9xu2vsk.execute-api.ap-northeast-1.amazonaws.com/sample/sampleapi";
-		
+
 		RestTemplate rest = new RestTemplate();
-		
-		ResponseEntity<String> response = rest.getForEntity(url, String.class); 
+
+		ResponseEntity<String> response = rest.getForEntity(url, String.class);
 
 		String json = response.getBody();
-		
+
 		ObjectMapper mapper = new ObjectMapper();
-		
+
 		AnimalsAPIData[] animalsList = mapper.readValue(json, AnimalsAPIData[].class);
-		
-		
+
 		return animalsList;
 	}
 
@@ -44,12 +41,10 @@ public class AnimalsAPIRepository {
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		
 		AnimalsAPIData[] matchingAnimalsList = mapper.readValue(json, AnimalsAPIData[].class);
 
-		
 		return matchingAnimalsList;
-		
+
 	}
 
 }

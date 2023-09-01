@@ -12,30 +12,28 @@ import com.example.demo.AnimalsAPI.data.AnimalsAPIData;
 import com.example.demo.AnimalsAPI.service.AnimalsApiService;
 
 @Controller
-public class AnimalsApiController { 
+public class AnimalsApiController {
 
-	private final AnimalsApiService animalsAPIService; 
+	private final AnimalsApiService animalsAPIService;
 
-	public AnimalsApiController(AnimalsApiService animalsAPIService) { 
-		
-		this.animalsAPIService = animalsAPIService; 
-	} 
+	public AnimalsApiController(AnimalsApiService animalsAPIService) {
+
+		this.animalsAPIService = animalsAPIService;
+	}
 
 	@GetMapping("animalsSerch")
-	 public String animalsSearch(Model model) throws IOException {
-		
+	public String animalsSearch(Model model) throws IOException {
 
-		 List<AnimalsAPIData> animalsList = animalsAPIService.getAnimalsAPIData();
-		
+		List<AnimalsAPIData> animalsList = animalsAPIService.getAnimalsAPIData();
 
-		model.addAttribute("animalsList", animalsList); 
+		model.addAttribute("animalsList", animalsList);
 
-		return "animalsSerch.html"; 
-		
+		return "animalsSerch.html";
+
 	}
 
 	@GetMapping("animalsResult")
-	public String animalDetails(@RequestParam("animals") String animals, Model model) throws IOException {
+	public String animalDetails(@RequestParam("animalld") String animals, Model model) throws IOException {
 
 		List<AnimalsAPIData> matchingAnimalsList = animalsAPIService.getSelectedAnimalsAPIData(animals);
 
