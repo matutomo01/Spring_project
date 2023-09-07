@@ -8,13 +8,13 @@
 
 <body>
 	<h1>動物詳細画面</h1>
-	<li th:each="animal : ${matchingAnimalsList}">
+	<div th:each="animal : ${matchingAnimalsList}">
 		<!--th:each="animal : ${matchingAnimalsList}"で、${matchingAnimalsList}内の各要素をanimal変数に代入-->
 		<p th:text="No： + ${animal.id}"></p>
 		<p th:text="英名： + ${animal.name}"></p>
 		<p th:text="和名： + ${animal.japaneseName}"></p>
 		<p th:text="鳴き声： + ${animal.cry}"></p>
-	</li>
+	</div>
 	<form action=animalsSerch method="get">
 		<button type="submit">トップへ</button>
 	</form>

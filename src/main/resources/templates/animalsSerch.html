@@ -9,7 +9,7 @@
 <body>
 	<form action="animalsResult" method="get">
 		<h1>動物検索画面</h1>
-		<select name="animalld">
+		<select name="animalid">
 			<option th:each="animal : ${animalsList}" th:value="${animal.id}" th:text="${animal.japaneseName}">
 			</option>
 		</select>
